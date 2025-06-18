@@ -502,4 +502,35 @@ TRAIN_DATA = [
     ('I want a black skirt under Rs. 1322', {'entities': [(9, 14, 'COLOR'), (15, 20, 'PRODUCT'), (31, 35, 'PRICE')]}),
     ('Find brown saree for less than 1410', {'entities': [(5, 10, 'COLOR'), (11, 16, 'PRODUCT'), (31, 35, 'PRICE')]}),
     ('Please find green skirt for less than 1141', {'entities': [(12, 17, 'COLOR'), (18, 23, 'PRODUCT'), (38, 42, 'PRICE')]}),
+    ("Could you list any black kurtas priced below 1200?", {
+    "entities": [(22, 27, "COLOR"), (28, 34, "PRODUCT"), (48, 52, "PRICE")]
+}),
+("I'm in search of a green lehenga for under 2200", {
+    "entities": [(21, 26, "COLOR"), (27, 34, "PRODUCT"), (45, 49, "PRICE")]
+}),
+("Budget up to 1500, looking for red dresses", {
+    "entities": [(13, 17, "PRICE"), (33, 36, "COLOR"), (37, 44, "PRODUCT")]
+}),
+("Do you have any offers on maroon gowns under 2500?", {
+    "entities": [(27, 33, "COLOR"), (34, 39, "PRODUCT"), (46, 50, "PRICE")]
+}),
+("Thinking about buying a yellow tunic not over 1800", {
+    "entities": [(25, 31, "COLOR"), (32, 37, "PRODUCT"), (49, 53, "PRICE")]
+}),
+("Need something formal in white below 1999", {
+    "entities": [(26, 31, "COLOR"), (38, 42, "PRICE")]
+}),
+("Is there a sky blue shirt I can get for 1400?", {
+    "entities": [(13, 21, "COLOR"), (22, 27, "PRODUCT"), (44, 48, "PRICE")]
+}),
+("Find me anything stylish and pink under 999", {
+    "entities": [(31, 35, "COLOR"), (42, 45, "PRICE")]
+}),
+("Looking to buy navy blue trousers for around 2100", {
+    "entities": [(15, 25, "COLOR"), (26, 34, "PRODUCT"), (49, 53, "PRICE")]
+}),
+("Price limit is 1750 — can I get a green salwar?", {
+    "entities": [(16, 20, "PRICE"), (37, 42, "COLOR"), (43, 49, "PRODUCT")]
+}),
+
 ]

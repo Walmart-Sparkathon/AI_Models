@@ -4,7 +4,7 @@ import spacy
 nlp = spacy.load("./product_filter_nlp")
 
 # Sample input
-text = "I need a maroon hoodie under 1800"
+text = "I need a red top "
 doc = nlp(text)
 
 # Initialize fields
