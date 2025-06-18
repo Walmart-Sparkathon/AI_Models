@@ -3,45 +3,22 @@ from spacy.training.example import Example
 from spacy.util import minibatch, compounding
 import random
 import warnings
+from training_data import TRAIN_DATA  # <-- This line is key
 
 warnings.filterwarnings("ignore")
 
-# 🧠 Sample training data
-TRAIN_DATA = [
-    ("I want a red saree under 1500", {
-        "entities": [(10, 13, "COLOR"), (14, 19, "PRODUCT"), (26, 30, "PRICE")]
-    }),
-    ("Show me blue shoes below 2000", {
-        "entities": [(8, 12, "COLOR"), (13, 18, "PRODUCT"), (25, 29, "PRICE")]
-    }),
-    ("Looking for a green kurti under 1000 rupees", {
-        "entities": [(16, 21, "COLOR"), (22, 27, "PRODUCT"), (34, 38, "PRICE")]
-    }),
-    ("Find yellow tops under 999", {
-        "entities": [(5, 11, "COLOR"), (12, 16, "PRODUCT"), (23, 26, "PRICE")]
-    }),
-    ("Suggest black jeans under 2500", {
-        "entities": [(8, 13, "COLOR"), (14, 19, "PRODUCT"), (26, 30, "PRICE")]
-    }),
-    ("I want a pink dress below 1800", {
-        "entities": [(10, 14, "COLOR"), (15, 20, "PRODUCT"), (27, 31, "PRICE")]
-    }),
-]
-
-# 🆕 Create blank English model
+# Create blank model
 nlp = spacy.blank("en")
 ner = nlp.add_pipe("ner")
 
-# 🏷 Add custom entity labels
+# Add labels
 labels = ["PRODUCT", "COLOR", "PRICE"]
 for label in labels:
     ner.add_label(label)
 
-# 🔁 Training loop
+# Training
 optimizer = nlp.begin_training()
-n_iter = 30
-
-for itn in range(n_iter):
+for itn in range(30):
     random.shuffle(TRAIN_DATA)
     losses = {}
     batches = minibatch(TRAIN_DATA, size=compounding(4.0, 32.0, 1.001))
